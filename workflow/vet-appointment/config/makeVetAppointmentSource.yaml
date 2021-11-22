@@ -1,0 +1,23 @@
+apiVersion: sources.knative.dev/v1
+kind: PingSource
+metadata:
+  name: make-vet-appointment
+spec:
+  schedule: '* * * * *'
+  contentType: 'application/json'
+  data: |
+    {
+      "patientInfo": {
+        "name": "Mia",
+        "breed": "German Shepherd",
+        "age": 5,
+        "reason": "Bee sting",
+        "patientId": "Mia1"
+      }
+    }
+  sink:
+    ref:
+      apiVersion: flows.knative.dev/v1
+      kind: Sequence
+      name: vet-appointment-workflow
+

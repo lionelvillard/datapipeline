@@ -1,0 +1,21 @@
+apiVersion: flows.knative.dev/v1
+kind: Sequence
+metadata:
+  name: vet-appointment-workflow
+spec:
+  steps:
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: start
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: make-vet-appointment
+
+        #delivery:
+        #  timeout: PT15M
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: end
