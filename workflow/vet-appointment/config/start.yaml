@@ -6,5 +6,5 @@ spec:
   template:
     spec:
       containers:
-        - image: ko://knative-composition/vetappointment/cmd/start
+        - image: ko://knflow/vetappointment/cmd/start
 

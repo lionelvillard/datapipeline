@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       containers:
-        - image: ko://knative-composition/vetappointment/cmd/makeAppointment
+        - image: ko://knflow/vetappointment/cmd/makeAppointment

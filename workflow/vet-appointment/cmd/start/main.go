@@ -12,7 +12,7 @@ import (
 
 func handle(e event.Event) (*event.Event, protocol.Result) {
 	id := uuid.New().String()
-	e.SetExtension("knativeflowid", id)
+	e.SetExtension("knativeflowid", id) // made up extension
 	log.Printf("starting workflow %s\n", id)
 
 	return &e, nil

@@ -1,4 +1,4 @@
-module knative-composition/vetappointment
+module knflow/vetappointment
 
 go 1.17
 
