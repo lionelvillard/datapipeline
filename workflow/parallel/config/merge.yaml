@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: merge
+spec:
+  template:
+    spec:
+      containers:
+        - image: ko://knflow/parallel/cmd/merge

@@ -1,0 +1,22 @@
+apiVersion: flows.knative.dev/v1
+kind: Sequence
+metadata:
+  name: parallel-workflow
+spec:
+  steps:
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: start
+    - ref:
+        apiVersion: flows.knative.dev/v1 # See issue https://github.com/knative/eventing/issues/1521
+        kind: Parallel
+        name: branches
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: merge
+    - ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: end

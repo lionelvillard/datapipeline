@@ -1,0 +1,16 @@
+apiVersion: flows.knative.dev/v1
+kind: Parallel
+metadata:
+  name: branches
+spec:
+  branches:
+  - subscriber:
+      ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: short-delay
+  - subscriber:
+      ref:
+        apiVersion: serving.knative.dev/v1
+        kind: Service
+        name: long-delay

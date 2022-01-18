@@ -1,0 +1,9 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: long-delay
+spec:
+  template:
+    spec:
+      containers:
+        - image: ko://knflow/parallel/cmd/longdelay
